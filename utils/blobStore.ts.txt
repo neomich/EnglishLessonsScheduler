@@ -1,0 +1,32 @@
+import { BlobClient } from '@vercel/blob';
+
+const blobClient = new BlobClient({
+  token: process.env.BLOB_READ_WRITE_TOKEN,
+});
+
+// Example function to get a blob
+export async function getBlob(url: string) {
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${blobClient.token}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Error fetching blob: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+// Example function to upload a blob
+export async function uploadBlob(file: File) {
+  const response = await blobClient.upload(file);
+  if (!response.ok) {
+    throw new Error(`Error uploading blob: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data;
+}
