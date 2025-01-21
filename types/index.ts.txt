@@ -1,0 +1,14 @@
+export type BookingStatus = "booked" | "fixed"
+
+export type BookingDuration = 60 | 90
+
+export type Booking = {
+  id: string
+  studentName: string
+  status: BookingStatus
+  startTime: string
+  duration: BookingDuration
+  date: Date
+  topic?: string
+  url?: string // Add this for Blob Store URL
+}
