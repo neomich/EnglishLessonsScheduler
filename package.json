@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "next build",
     "start": "next start",
@@ -12,21 +11,12 @@
   "dependencies": {
     "next": "^14.2.16",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-=======
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> f89d7778f3601f7731779395e9fc21e8a64973b4
+    "react-dom": "^18.2.0",
+    "@vercel/blob": "^0.27.1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-<<<<<<< HEAD
   "description": ""
-=======
-  "description": "",
-  "dependencies": {
-    "@vercel/blob": "^0.27.1"
-  }
->>>>>>> f89d7778f3601f7731779395e9fc21e8a64973b4
 }
