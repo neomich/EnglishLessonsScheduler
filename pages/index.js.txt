@@ -1,11 +1,13 @@
 import React from 'react';
+import WeeklyCalendar from './WeeklyCalendar'; // Import the WeeklyCalendar component
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div>
-      <h1>Welcome to English Lessons Scheduler</h1>
+      <h1>English Lessons Scheduler</h1>
+      <WeeklyCalendar />
     </div>
   );
 };
 
-export default HomePage;
+export default Home;

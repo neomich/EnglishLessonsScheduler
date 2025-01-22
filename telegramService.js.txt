@@ -1,0 +1,22 @@
+import { TelegramClient } from 'messaging-api-telegram';
+
+const client = TelegramClient.connect('YOUR_TELEGRAM_BOT_TOKEN');
+
+async function sendTelegramNotification(chatId: string, message: string, retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const response = await client.sendMessage(chatId, message);
+      console.log('Telegram notification sent successfully:', response);
+      return; // Exit the function if the message is sent successfully
+    } catch (error) {
+      console.error(`Attempt ${attempt} - Failed to send Telegram notification:`, error.response ? error.response.data : error.message);
+      if (attempt < retries) {
+        console.log('Retrying...');
+      } else {
+        console.error('All attempts to send the Telegram notification failed.');
+      }
+    }
+  }
+}
+
+export { sendTelegramNotification };
