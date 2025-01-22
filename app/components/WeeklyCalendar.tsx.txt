@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { createBooking } from './bookingService'; // Import the createBooking function
+import React, { useState } from 'react'; // Ensure React is imported
+import { createBooking } from '../bookingService'; // Import the createBooking function
 
 const WeeklyCalendar = () => {
   const [bookingDetails, setBookingDetails] = useState({ name: '', date: '', time: '' });
