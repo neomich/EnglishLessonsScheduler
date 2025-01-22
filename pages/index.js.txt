@@ -1,5 +1,5 @@
-import React from 'react'; // Ensure React is imported
-import WeeklyCalendar from './WeeklyCalendar'; // Import the WeeklyCalendar component
+import React from 'react';
+import WeeklyCalendar from './WeeklyCalendar';
 
 const Home = () => {
   return (
