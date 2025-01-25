@@ -1,4 +1,4 @@
-import { sendTelegramNotification } from './telegramService';
+import { sendTelegramMessage } from './telegramService'; // Update the import path if necessary
 
 async function createBooking(bookingDetails) {
   try {
@@ -6,7 +6,7 @@ async function createBooking(bookingDetails) {
     const booking = await saveBookingToDatabase(bookingDetails);
 
     // Send a Telegram notification
-    await sendTelegramNotification('YOUR_CHAT_ID', `A new booking has been created! Details: ${JSON.stringify(bookingDetails)}`);
+    await sendTelegramMessage(`A new booking has been created! Details: ${JSON.stringify(bookingDetails)}`);
     
     return booking;
   } catch (error) {

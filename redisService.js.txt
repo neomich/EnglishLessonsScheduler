@@ -1,0 +1,17 @@
+import { Redis } from '@upstash/redis';
+
+// Initialize the Redis client
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_URL,
+  token: process.env.UPSTASH_REDIS_TOKEN,
+});
+
+// Example function to set a value
+export async function setValue(key, value) {
+  await redis.set(key, value);
+}
+
+// Example function to get a value
+export async function getValue(key) {
+  return await redis.get(key);
+}

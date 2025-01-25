@@ -1,0 +1,7 @@
+module default {
+  type Booking {
+    required property name -> str;
+    required property date -> datetime;
+    required property time -> str;
+  }
+}
